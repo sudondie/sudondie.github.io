@@ -1,25 +1,33 @@
 {
   "$jason": {
     "head": {
+      "title": "Twitter",
+      "styles": {
+        "note": {
+          "color": "#ffffff",
+          "font": "HelveticaNeue-Bold",
+          "size": "15"
+        }
+      },
       "actions": {
-        "$load": {
-          "type": "$agent.request",
-          "options": {
-            "id": "$webcontainer",
-            "method": "login",
-            "params": ["alice", "1234"]
+        "$pull": {
+          "type": "$flush",
+          "success": {
+            "type": "$reload"
           }
         }
-      }
-    },
-    "body": {
-      "header": {
-        "title": "Web Container 2.0"
       },
-      "background": {
-        "type": "html",
-        "url": "https://github.com/sudondie/sudondie.github.io/blob/master/tiny/index.html"
+      "templates": {
+        "body": {
+            "header": {
+                "title": "Web Container 2.0"
+              },
+              "background": {
+                "type": "html",
+                "url": "https://github.com/sudondie/sudondie.github.io/blob/master/tiny/index.html"
+              }
+        }
+        }
       }
     }
   }
-}
