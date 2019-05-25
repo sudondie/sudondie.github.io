@@ -1,0 +1,94 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+    header
+        .second
+            top: 25vh
+// ≥992px
++media-breakpoint-down(md)
+    header
+        .second
+            top: 19vh
+// ≥768px
++media-breakpoint-down(sm)
+    header
+        .second
+            top: 10vh
+// ≥576px
++media-breakpoint-down(xs)
+    .top-header
+        .col-md-7
+            ul 
+                display: none
+            .order_button1
+                display: none
+    header
+        .first
+            z-index: 0
+            display: none
+        .second
+            top: -6vh
+            height: 200px
+            z-index: 5
+        .forth
+            top: 90vh
+            left: 7vh
+    .main-header
+        .row
+            .col-md-6
+                padding-top: 120px
+                h1
+                    color: #000000
+                    font-size: 30px
+    .section2
+        .row
+            justify-content: center
+            text-align: center
+            .col-md-3
+                p
+                    padding: 0
+                    padding-bottom: 10px
+    .section4
+        .row
+            justify-content: center
+            text-align: center
+            .col-md-3
+                p
+                    padding: 0
+                    padding-bottom: 10px
+    .order
+        .ord-row2
+            form
+                flex-direction: column
+                .hugeinput
+                    width: 300px
+                    font-family: comfortaa
+                .col-md-5
+                    input
+                        width: 300px
+                        font-family: comfortaa
+    .problem
+        .row
+            .col-md-5
+                margin-block-end: 20px
+                a
+                    padding: 10px 20px
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
