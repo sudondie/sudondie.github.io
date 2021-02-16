@@ -1,0 +1,454 @@
+@import vars
+@import fonts
+@import libs
+::placeholder
+	color: #666
+::selection
+	background-color: $accent
+	color: #fff
+	background: #f1c40f
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+body
+	box-sizing: border-box
+	font-size: 16px
+	min-width: 320px
+	line-height: 1.65
+	font-family: 'IBM', sans-serif
+	font-weight: 400
+	color: $text
+	margin: 0
+	padding: 0
+	height: 100vh
+	background-color: #090909
+body.active
+	overflow: hidden
+.header__row1__wrapper
+	display: flex
+.header__row1
+	min-width: 52px
+	position: fixed
+	width: 100%
+	z-index: 6
+	justify-content: space-between
+	padding-top: 10px
+	.row__menu
+		padding: 8px 20px
+	.row__burger:before,.row__burger:after
+		cursor: pointer
+		content: ''
+		background-color: #fff
+		position: absolute
+		width: 20px
+		height: 2px
+		left: 0
+	.row__burger:before
+		cursor: pointer
+		top: 0
+		transition: 0.2s
+	.row__burger:after
+		cursor: pointer
+		bottom: 0
+		transition: 0.2s
+	.row__burger
+		cursor: pointer
+		padding: 10px
+		span
+			background-color: #fff
+			position: absolute
+			left: 0
+			width: 20px
+			height: 2px
+			top: 9px
+			transition: 0.2s
+	.row__burger.active:before
+		transform: rotate(45deg)
+		transition: 0.2s
+		top: 9px
+	.row__burger.active:after
+		transform: rotate(-45deg)
+		transition: 0.2s
+		bottom: 9px
+	.row__burger.active
+		span
+			transform: scale(0)
+	.row__langswitch
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+		a
+			text-decoration: none
+			color: #fff
+		a:nth-child(2)
+			font-size: 10px
+			color: #CCCCCC
+	.header__menu
+		display: none
+	.header__menu.active
+		margin-top: 35px
+		width: 100%
+		height: 100vh
+		display: flex
+		justify-content: center
+		align-items: center
+		z-index: 4
+		nav
+			margin-bottom: 102px
+		.header__list
+			list-style-type: none
+			margin: 0
+			padding: 0
+			text-align: center
+			text-transform: uppercase
+			li
+				transition: 0.3s
+				a
+					text-decoration: none
+					border-color: #f1c40f
+					color: #fff
+					background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%)
+					background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%)
+					background-position: 100%
+					background-size: 400%
+					-webkit-transition: background 300ms ease-in-out
+					transition: background 300ms ease-in-out
+					font-weight: 500
+					font-size: 38px
+				a:hover
+					background-position: 0
+					transition: 0.4s
+.header,.aboutMe,.skills,.projects,.contacts
+	height: 100vh
+	padding: 0
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	z-index: 10
+	background: #090909
+	.header__row3
+		.row__title
+			p
+				text-transform: uppercase
+				font-weight: 500
+				color: #CCCCCC
+				margin: 0
+		.row__pagenum
+			.col-md-12
+				display: flex
+				justify-content: flex-end
+				p
+					color: #808080
+					font-weight: 400
+					margin: 0
+.header
+	.header__row2
+		justify-content: space-around
+		display: flex
+		margin-top: calc((100vh - 52px - 36.4px)/3)
+		.header__description
+			display: flex
+			flex-direction: column
+			justify-content: center
+			h3
+				color: #808080
+				text-transform: uppercase
+				font-size: 20px
+			h3:before
+				content: '<'
+			h3:after
+				content: '>'
+			p
+				color: #ffffff
+				font-size: 28px
+				font-weight: 500
+			button
+				border: 3px solid #ffffff
+				border-radius: 5px
+				padding: 10px 15px
+				text-transform: uppercase
+				font-weight: 600
+				width: 200px
+				transition: 0.2s
+				border-color: #f1c40f
+				background-color: #000
+				color: #Fff
+				background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%)
+				background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%)
+				background-position: 100%
+				background-size: 400%
+				-webkit-transition: background 300ms ease-in-out
+				transition: background 300ms ease-in-out
+			button:hover
+				background-position: 0
+		.header__description.active,.header__image.active
+			display: none
+		.header__image
+			display: flex
+			align-items: center
+			justify-content: center
+			img
+				width: 100%
+				height: auto
+	.header__row3
+		display: flex
+		justify-content: space-between
+		padding-bottom: 10px
+		z-index: 5
+		.row__email
+			a
+				text-decoration: none
+				color: #CCCCCC
+		.row__socials
+			.col-md-12
+				display: flex
+				flex-direction: row
+				justify-content: flex-end
+				a
+					margin-right: 10px
+					text-decoration: none
+					color: #808080
+	.header__row3.active
+		display: none
+.aboutMe
+	.header__row2
+		.header__description
+			h3
+				color: #fff
+			h3:before
+				content: ''
+			h3:after
+				content: ''
+			p
+				font-size: 18px
+				color: #CCCCCC
+				margin: 5px
+		.header__image
+			img
+				width: 100%
+				height: auto
+		.header__image2
+			display: none
+.skills
+	.header__row2
+		justify-content: center
+		align-items: center
+		margin-top: calc((100vh - 52px - 36.4px)/ 3)
+		h3
+			color: #ffffff
+			text-transform: uppercase
+		.header__description
+			display: flex
+			flex-direction: column
+			align-items: center
+			line-height: 1
+			margin-top: 20px
+			.skills_text
+				display: flex
+				flex-direction: column
+			.col-md-6
+				flex-shrink: 0
+				flex-basis: 400px
+				p
+					font-size: 18px
+					color: #CCCCCC
+.projects
+	.header__row2
+		display: block
+		flex-wrap: wrap
+		justify-content: center
+		h3
+			color: #ffffff
+			text-transform: uppercase
+			z-index: 1
+		.header__description
+			display: flex
+			flex-direction: row
+			line-height: 1
+			margin-top: 15px
+			p
+				font-size: 18px
+				color: #CCCCCC
+			.col-md-6
+				justify-content: space-between
+				display: flex
+				flex-direction: column
+				.row
+					display: flex
+					justify-content: space-between
+					a
+						text-transform: uppercase
+						color: #808080
+						text-decoration: none
+						margin-top: 10px
+					.col-md-6,.col-md-3
+						margin: 0
+						padding: 0
+					.col-md-3
+						display: flex
+						justify-content: flex-end
+				.projects__links
+					display: flex
+					justify-content: flex-end
+					color: #ffffff
+					text-transform: uppercase
+				.projects__links:before
+					content: '←'
+					margin-right: 10px
+					cursor: pointer
+					color: #808080
+					font-weight: 600
+				.projects__links:after
+					content: '→'
+					font-weight: 600
+					margin-left: 10px
+					cursor: pointer
+					color: #808080
+		.owl-stage
+			display: flex
+			.owl-item
+				display: flex
+				justify-content: center
+				.slider__item
+					display: flex
+					flex-direction: column
+					justify-content: space-between
+					align-items: center
+					img
+						width: 400px
+						height: 200px
+
+//media queries
++media-breakpoint-down(sm)
+	body
+		.header
+			height: 100vh
+			.header__row2
+				margin-top: calc((100vh - 52px - 36.4px)/3)
+				.header__description
+					display: flex
+					align-items: center
+					text-align: center
+					padding-left: 20px
+					padding-right: 20px
+					p
+						font-weight: 600
+						font-size: 18px
+				.header__image
+					display: none
+		.aboutMe
+			.header__row2
+				margin-top: 100px
+				.header__image2
+					display: flex
+					justify-content: center
+					margin-bottom: 10px
+					padding: 0
+					img
+						width: 350px
+						height: 200px
+		.skills
+			.header__row2
+				justify-content: center
+				margin-top: calc((100vh - 52px - 36.4px)/ 3)
+				.header__description
+					.skills_text
+						text-align: center
+		.projects
+			.header__row2
+				.owl-stage
+					display: flex
+					.owl-item
+						display: flex
+						justify-content: center
+						margin: 10px
+						.slider__item
+							display: flex
+							flex-direction: column
+							justify-content: space-between
+							align-items: center
+							img
+								width: 300px
+								height: 200px
+			.owl-dots
+				display: block
+				width: 300px
+				background-color: #fff
+
++media-breakpoint-down(xs)
+	.header__menu
+		display: none
+	.header__menu.active
+		margin-top: 30px
+		width: 100%
+		height: 100vh
+		padding-left: 15px
+		display: flex
+		justify-content: center
+		align-items: center
+		z-index: 4
+		nav
+			margin-bottom: 102px
+	body
+		.header
+			.header__menu
+				padding-left: 15px
+				background-color: #fff
+			.header__row2
+				.header__description
+					padding-left: 20px
+					padding-right: 20px
+			.header__row3
+				.row__socials
+					display: none
+				.row__email
+					text-align: center
+		.header .header__row2 .header__description button
+			width: 150px
+		.header .header__row2
+		.aboutMe
+			.header__row2
+				margin-top: calc( 100vh - 52px - 36px - 560px)
+				display: flex
+				flex-direction: row-reverse
+				.header__description
+					margin: 5px
+					padding: 0
+					h3
+						margin: 10px
+					p
+						font-size: 12px
+						margin: 10px
+				.header__image
+					display: none
+				.header__image2
+					display: flex
+					height: auto
+					width: 50%
+					justify-content: center
+					align-items: center
+					margin-top: 100px
+					padding: 0
+		.skills
+			.header__row2
+				justify-content: center
+				align-items: center
+				margin-top: calc((100vh - 52px - 36.4px)/ 3)
+				.header__description
+					.skills_text
+						text-align: center
+@media (max-width: 575px) and (max-aspect-ratio: 16/9)
+	.header__row3
+		margin-bottom: 52px
+.header__menu.active
+	nav
+		margin-bottom: 122px
+@media (max-width: 575px) and (min-aspect-ratio: 19/9)
+	.header__row3
+		margin-bottom: 0
++media-breakpoint-down(md)
+
+// Custom Sass / Remove before use
