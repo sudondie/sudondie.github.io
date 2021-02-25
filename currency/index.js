@@ -1,7 +1,7 @@
 const axios = require('axios');
 const getExchangeRate = async (fromCurrency, toCurrency) => {
     try {
-        const response = await axios.get('http://api.currencylayer.com/live?access_key=5e6a36bc33c0f6d68f1ee378738388ef');
+        const response = await axios.get('https://api.currencylayer.com/live?access_key=5e6a36bc33c0f6d68f1ee378738388ef');
         const rate = response.data.quotes; //объект с курсами валют
         const baseCurrency = response.data.source; //базовая валюта
         const usd = 1 / rate[`${baseCurrency}${fromCurrency}`]; //
@@ -28,7 +28,7 @@ const currencyConvert = async (fromCurrency, toCurrency, amount) => {
     return `${amount} ${fromCurrency} стоит ${converted} ${toCurrency}. Их можно потратить в: \n ${countries}`;
 }
 
-function fuck() {
+function convertOnClick() {
     const from = document.getElementById("from").value;
     const to = document.getElementById("to").value;
     const amount = document.getElementById("amount").value;
@@ -36,4 +36,4 @@ function fuck() {
         .then(message => alert(message))
         .catch(err => console.log(err.message));
 }
-document.getElementById('submit').onclick = fuck;
+document.getElementById('submit').onclick = convertOnClick;
