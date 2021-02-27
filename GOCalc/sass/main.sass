@@ -27,6 +27,7 @@ button:focus
 .calculator
     display: flex
     width: 500px
+    min-width: 250px
     height: auto
     flex-direction: column
     overflow: hidden
@@ -79,6 +80,7 @@ button:focus
                 margin-bottom: 0px
         .operations
             width: 100px
+            min-width: 50px
             flex-direction: column
             border: none
             justify-content: space-between
@@ -120,3 +122,26 @@ button:focus
         .clicked:before
             content: ">"
             padding-left: 10px
+
+//media queries 
+@media screen and ( max-width: 500px )
+    .input-text,.output-text
+        font-size: 20px
+    button
+        font-size: 30px
+        margin-right: 40px
+    .numpad
+        width: 850px !important
+        min-width: 236px !important
+    .calculator
+        width: 100%
+        min-width: 370px
+    .operations
+        width: 40% !important
+        margin-right: 60px
+@media screen and ( max-width: 447px )
+    button
+        margin-right: 12px
+    .extra-operations-numpad
+        button
+            margin-right: 40px
