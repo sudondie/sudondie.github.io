@@ -79,7 +79,7 @@ button:focus
             button:nth-child(n+9)
                 margin-bottom: 0px
         .operations
-            width: 150px
+            width: 100px
             min-width: 50px
             flex-direction: column
             border: none
@@ -87,6 +87,41 @@ button:focus
             button
                 margin: 0
                 color: #7191C0
+        .extra-operations
+            display: flex
+            transition: 0.4s
+            position: absolute
+            right: -300px
+            height: 500px
+            align-items: center
+            justify-content: center
+            width: 360px
+            background-color: #174FA6
+            .extra-operations-numpad
+                text-align: center
+                margin: 0
+                width: 300px
+                button
+                    background-color: #174FA6
+                    font-size: 25px
+                    margin-bottom: 50px
+                    border-radius: 3px
+                button:focus
+                    background-color: #2F60AF
+                button:nth-child(3n+3)
+                    margin-right: 0px
+                button:nth-child(n+12)
+                    margin-bottom: 0px
+        .extra-operations:before
+            content: '<'
+            color: #fff
+            font-size: 40px
+            cursor: pointer
+        .clicked
+            right: 0
+        .clicked:before
+            content: ">"
+            padding-left: 10px
 
 //media queries 
 @media screen and ( max-width: 500px )
@@ -101,6 +136,12 @@ button:focus
     .calculator
         width: 100%
         min-width: 370px
+    .operations
+        width: 40% !important
+        margin-right: 60px
 @media screen and ( max-width: 447px )
     button
         margin-right: 12px
+    .extra-operations-numpad
+        button
+            margin-right: 40px
