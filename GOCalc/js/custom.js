@@ -43,6 +43,9 @@ divs.forEach((e) => {
   e.addEventListener('click', (e) => {
     let target = e.target.value;
     target !== undefined ? (inputText.textContent += target) : null;
+    target !== inputText.textContent.slice(inputText.textContent.length - 1)
+      ? (inputText.textContent += target)
+      : null;
     calculate(target);
   });
 });
