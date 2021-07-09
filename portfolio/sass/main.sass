@@ -123,6 +123,7 @@ body.active
 					transition: 0.4s
 .header,.aboutMe,.skills,.projects,.contacts
 	height: 100vh
+	height: calc(var(--vh, 1vh) * 100)
 	padding: 0
 	display: flex
 	flex-direction: column
@@ -201,7 +202,10 @@ body.active
 		.row__email
 			a
 				text-decoration: none
-				color: #CCCCCC
+				color: #808080
+				transition: 0.3s
+			a:hover
+				color: #cccccc
 		.row__socials
 			.col-md-12
 				display: flex
@@ -209,8 +213,11 @@ body.active
 				justify-content: flex-end
 				a
 					margin-right: 10px
+					transition: 0.3s
 					text-decoration: none
 					color: #808080
+				a:hover
+					color: #cccccc
 	.header__row3.active
 		display: none
 .aboutMe
@@ -227,11 +234,46 @@ body.active
 				color: #CCCCCC
 				margin: 5px
 		.header__image
-			img
+			position: relative
+			cursor: pointer
+			background-image: url("../img/me.jpg")
+			background-size: 100% 100%
+			background-repeat: no-repeat
+			border-radius: 5px
+			.header__image-socials
+				background-color: rgba(255, 255, 255, 0.5)
 				width: 100%
-				height: auto
+				height: 0%
+				position: absolute
+				display: flex
+				flex-direction: column
+				text-align: center
+				justify-content: center
+				transition: 0.3s
+				visibility: hidden
+				a
+					text-decoration: none
+					color: #000
+					display: none
+					align-items: center
+					justify-content: center
+					text-transform: uppercase
+					font-weight: 600
+				img
+					width: 20px
+					margin-right: 10px
+					height: auto
+		.header__image:hover
+			.header__image-socials
+				height: 100%
+				transition: 0.3s
+				border-radius: 5px
+				visibility: visible
+				a
+					display: flex
 		.header__image2
 			display: none
+
 .skills
 	.header__row2
 		justify-content: center
@@ -325,7 +367,8 @@ body.active
 +media-breakpoint-down(sm)
 	body
 		.header
-			height: 100vh
+			height: calc(100vh - 55px)
+			height: calc(var(--vh,1vh) * 100)
 			.header__row2
 				margin-top: calc((100vh - 52px - 36.4px)/3)
 				.header__description
@@ -341,15 +384,23 @@ body.active
 					display: none
 		.aboutMe
 			.header__row2
-				margin-top: 100px
-				.header__image2
-					display: flex
-					justify-content: center
-					margin-bottom: 10px
-					padding: 0
-					img
-						width: 350px
-						height: 200px
+				margin-top: 150px
+				.header__image:hover
+					.header__image-socials
+						height: 100%
+						transition: 0.3s
+						border-radius: 5px
+						visibility: visible
+						a
+							display: flex
+				.header__image:hover
+					.header__image-socials
+						height: 100%
+						transition: 0.3s
+						border-radius: 5px
+						visibility: visible
+						a
+							display: flex
 		.skills
 			.header__row2
 				justify-content: center
@@ -402,6 +453,7 @@ body.active
 					padding-left: 20px
 					padding-right: 20px
 			.header__row3
+				margin: 0
 				.row__socials
 					display: none
 				.row__email
